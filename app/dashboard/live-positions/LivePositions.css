@@ -1,0 +1,80 @@
+.positions-container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .positions-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 25px;
+  }
+  
+  .position-card {
+    background: rgb(71, 71, 241);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(154, 147, 243, 0.5);
+    width: 250px;
+    text-align: left;
+    /* border-left: 5px solid white; */
+    transition: 0.1s;
+  }
+
+  .position-card:hover{
+    background-color: darkblue;
+    transform: scale(1.1);
+    transition: 0.1s;
+  }
+  
+  .position-card h3 {
+    margin: 0 0 10px;
+    color: white;
+  }
+  
+  .position-card p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .profit {
+    color: green;
+    font: bold;
+    font-weight: bolder;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  .loss {
+    color: red;
+    font-weight: bolder;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .edit-btn, .exit-btn {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .edit-btn {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  .exit-btn {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  

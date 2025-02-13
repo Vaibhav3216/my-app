@@ -1,0 +1,76 @@
+.dashboard {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #342d2d;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .dashboard:hover{
+    transform: scale(1.02);
+    transition: 0.1s;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logoutBtn {
+    padding: 8px 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logoutBtn:hover {
+    background-color: darkred;
+  }
+  
+  .funds, .positions, .watchlist {
+    margin-bottom: 20px;
+  }
+  
+  
+  .dashboard h2 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+  }
+  
+  .table {
+    width: 100%;
+    /* border-collapse: collapse; */
+    margin-top: 10px;
+  }
+  
+  .table th, .table td {
+    border: 1px #ccc;
+    
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .profit {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .loss {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .watchlist ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .watchlist li {
+    padding: 5px 0;
+  }
+  

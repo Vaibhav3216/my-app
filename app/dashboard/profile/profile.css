@@ -1,0 +1,45 @@
+.profile-container {
+    width: 500px;
+    height: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  .tabs button {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background: #5f76eb;
+    font-weight: bold;
+  }
+  .tabs button:hover{
+    transform: scale(1.1);
+    transition: 0.1s;
+  }
+  .tabs .active {
+    background: darkblue;
+    color: white;
+  }
+  .tab-content {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+  .raise-ticket {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .profile{
+    display: grid;
+    justify-content: center;
+  }

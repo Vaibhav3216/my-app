@@ -1,0 +1,70 @@
+.watchlist-container {
+    width: 60%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .watchlist-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  
+  .tab-button {
+    padding: 10px;
+    border: none;
+    background-color: lightgray;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.tab-button.active {
+      border-radius: 5px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .stock-list {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 5px 0;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .blue-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .blue-button:hover {
+    background-color: darkblue;
+  }
+  

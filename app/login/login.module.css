@@ -1,0 +1,51 @@
+/* Wrap everything inside a container class */
+.loginContainer {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .loginContainer h2 {
+    margin-bottom: 20px;
+    color: red;
+  }
+  
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Prefix selectors with the parent class */
+  .loginForm label {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .loginForm input {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  /* Fixing the button selector */
+  .loginForm button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .loginForm button:hover {
+    background-color: darkblue;
+  }
+  
