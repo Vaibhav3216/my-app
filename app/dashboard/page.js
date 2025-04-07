@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import styles from "./Dashboard.module.css";
 import Header from "./header.js";
 
+
 export default function Dashboard() {
   const router = useRouter();
   
@@ -29,9 +30,19 @@ export default function Dashboard() {
     console.log("Fetching positions, funds, and market data...");
   }, []);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     alert("Logging out...");
+    document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    // document.cookie = "token=;";
+    // window.location.href = "/login"; // Redirect after logout
+
+    let response=await fetch('/Backend/api/login',{
+      method: "GET"})
+      let result2 = await response.json()
+
+      if(result2.success){
     router.push("/"); // Redirect to login page
+      }
   };
 
   return (

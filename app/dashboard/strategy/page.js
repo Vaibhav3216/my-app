@@ -54,7 +54,9 @@ const toggleExpand = (id) => {
             }}>
             New Strategy</div>
             
-            <div className={styles.box} >
+            <div className={styles.box}  onClick={()=>{
+                router.push('/dashboard/strategy/load_strategy')
+            }} >
             Load Strategy</div>
             </div>
 

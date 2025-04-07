@@ -48,4 +48,19 @@
   .loginForm button:hover {
     background-color: darkblue;
   }
+
+  .but{
+    margin-top: 15px;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .but:hover{
+    background-color: darkblue;
+  }
   

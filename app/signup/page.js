@@ -10,17 +10,39 @@ export default function Login() {
   const [api_key, setAPI] = useState("");
   const router = useRouter();
 
-  const handleSubmit = (e) => {
+  let data = {
+    userId,
+    mpin,
+    totp,
+    api_key,
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Logging in with:", { userId, mpin, totp });
+
+    let response = await fetch('http://192.168.29.215:3000/Backend/api/signup',{
+      method: "POST",
+      body: JSON.stringify(data)
+    }
+)
+
+    let result = await response.json()
+    if (result.success){
+      alert("Done")
+      router.push('/login')
+    }
+
+    // console.log(response.success)
+
+    // console.log("Logging in with:", { userId, mpin, totp });
 
     // Dummy authentication logic (Replace with actual API call)
-    if (userId && mpin && totp) {
-      alert("Login Successful!");
-      router.push("/"); // Redirect to Home
-    } else {
-      alert("Please enter all fields!");
-    }
+    // if (userId && mpin && totp) {
+    //   alert("Login Successful!");
+    //   router.push("/"); // Redirect to Home
+    // } else {
+    //   alert("Please enter all fields!");
+    // }
   };
 
   return (
@@ -35,18 +57,19 @@ export default function Login() {
 
   <label>TOTP:</label>
   <input type="text" value={totp} onChange={(e) => setTotp(e.target.value)} required />
+
   <label>API Key:</label>
-  <input type="text" value={api_key} onChange={(e) => setTotp(e.target.value)} required />
+  <input type="text" value={api_key} onChange={(e) => setAPI(e.target.value)} required />
 
   {/* Button inside the form class */}
+</form>
   <div className={styles.but}>
     <button onClick={()=>{router.push('/')}}>BACK</button>
-  <button type="submit">Sign Up</button>
+  <button type="submit" onClick={handleSubmit}>Sign Up</button>
 
   </div>
 
   
-</form>
 
     </div>
   );

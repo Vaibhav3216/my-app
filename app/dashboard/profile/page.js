@@ -2,9 +2,14 @@
 import React, { useState, useEffect } from "react";
 import Header from "../header";
 import './profile.css';
+import Cookies from "js-cookie";
+// import { cookies } from "next/headers";
 
 const ProfilePage = () => {
   const [activeTab, setActiveTab] = useState("account");
+  const [name, setname] = useState();
+  const [mpin, setmpin] = useState();
+  const [api, setapi] = useState();
 //   const [profileData, setProfileData] = useState(null);
 
 //   useEffect(() => {
@@ -27,7 +32,32 @@ const profileData = {
     margin: "10,000",
     withdrawableBalance: "40,000"
   };
+let result;
 
+async function load(){
+  let val = Cookies.get('id')
+  console.log(val)
+  
+  let response = await fetch('/Backend/api/controller',{
+    method: "POST",
+    body: JSON.stringify(val)
+  })
+
+  result = await response.json()
+  if (result.success){
+    console.log(result.hold)
+    setname(result.hold.userId)
+    setmpin(result.hold.mpin)
+    setapi(result.hold.api_key)
+  }
+}
+  useEffect(()=>{
+  load()
+  },[])
+
+  // let result6 = result.hold
+
+ 
   return (<div>
     <Header></Header> 
     <div className="profile">
@@ -49,11 +79,10 @@ const profileData = {
       
       {activeTab === "account" ? (
         <div className="tab-content">
-          <p><strong>Name:</strong> {profileData.name}</p>
-          <p><strong>Mobile No:</strong> {profileData.mobile}</p>
-          <p><strong>Demat Account No:</strong> {profileData.dematAccount}</p>
-          <p><strong>Broker Name:</strong> {profileData.brokerName}</p>
-          <p><strong>Email:</strong> {profileData.email}</p>
+          <p><strong>Name:</strong> {name}</p>
+          <p><strong>Mpin:</strong> {mpin}</p>
+          <p><strong>API Key:</strong> {api}</p>
+          
         </div>
       ) : (
         <div className="tab-content">

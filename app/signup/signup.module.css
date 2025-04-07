@@ -52,6 +52,23 @@
   .but{
     display: flex;
     justify-content: center;
+  }
+
+  .but button{
+    display: flex;
+    justify-content: center;
     padding: 10px;
+    margin: 15px;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .but button:hover{
+    background-color: darkblue;
   }
   

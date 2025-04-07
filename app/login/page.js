@@ -9,17 +9,37 @@ export default function Login() {
   const [totp, setTotp] = useState("");
   const router = useRouter();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Logging in with:", { userId, mpin, totp });
+  let data={
+    userId,
+    mpin,
+    totp
+  }
 
-    // Dummy authentication logic (Replace with actual API call)
-    if (userId && mpin && totp) {
-      alert("Login Successful!");
-      router.push("/"); // Redirect to Home
-    } else {
-      alert("Please enter all fields!");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let response = await fetch('/Backend/api/login',{
+      method: "POST",
+      body: JSON.stringify(data)
     }
+)
+
+    let result = await response.json()
+    if (result.success){
+      alert("Login Successful")
+      router.push('/dashboard')
+    }
+    else{
+      alert("Login Fail")
+    }
+    // console.log("Logging in with:", { userId, mpin, totp });
+
+    // // Dummy authentication logic (Replace with actual API call)
+    // if (userId && mpin && totp) {
+    //   alert("Login Successful!");
+    //   router.push("/"); // Redirect to Home
+    // } else {
+    //   alert("Please enter all fields!");
+    // }
   };
 
   return (
@@ -39,8 +59,9 @@ export default function Login() {
   <button type="submit">Login</button>
 
   
-    <button onClick={()=>{router.push('/')}}>BACK</button>
+    
 </form>
+  <button className={styles.but} onClick={()=>{router.push('/')}}>BACK</button>
 
     </div>
   );
